@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    title Nutchy - XXX 系统 - #{title}
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    if settings.env === 'development' && settings.livereload
+      script.
+        (function(g,c,e,d,f,b){if(d){f=c.createElement(e);f.async=1;f.src=d;b=c.getElementsByTagName(e)[0];b.parentNode.insertBefore(f,b)}})(window,document,"script",!{JSON.stringify(settings.livereload)})
+  body
+    block content
