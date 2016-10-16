@@ -6,6 +6,12 @@ Project description goes here.
 
 Node.js / Git / Grunt-cli and so on...
 
+1. Make sure that Node.js and git is installed in your OS.
+2. The following npm packages is also required:
+   - grunt-cli
+   - bower
+   - nodemon
+
 ## Project Initialization
 
 To initialize the project, run:

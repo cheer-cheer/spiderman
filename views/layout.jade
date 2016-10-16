@@ -1,10 +1,28 @@
-doctype html
-html
-  head
-    title Nutchy - XXX 系统 - #{title}
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    if settings.env === 'development' && settings.livereload
-      script.
-        (function(g,c,e,d,f,b){if(d){f=c.createElement(e);f.async=1;f.src=d;b=c.getElementsByTagName(e)[0];b.parentNode.insertBefore(f,b)}})(window,document,"script",!{JSON.stringify(settings.livereload)})
-  body
-    block content
+extends basic-layout
+
+block html_head
+  link(rel='stylesheet', href='/lib/metisMenu/metisMenu.css')
+  script.
+    require(['frame'],function(){})
+
+  block html_head
+
+block body_content
+  // sidebar 侧边栏导航
+  .row
+    .col-md-12.wrapper
+      aside.sidebar
+        nav.sidebar-nav
+          ul#ul-mnu.metismenu
+            li.active
+              a(href='#' aria-expanded='true') 爬虫管理
+                span.fa.arrow
+              ul(aria-expanded='true')
+                li
+                  a(href='/my/spiders') 我的爬虫
+                li
+                  a(href='#') Submenu 2
+            li
+              a(href='#') Menu 2
+      .content
+        block content

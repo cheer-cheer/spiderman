@@ -1,0 +1,39 @@
+{
+  "name": "spiderman",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "cheer <cheer@live.cn>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "spiderman"
+  ],
+  "homepage": "https://github.com/cheer-cheer/spiderman",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "exportsOverride": {
+    "bootstrap": {
+      "js": "dist/js/bootstrap.min.js",
+      "fonts": "dist/fonts/*.*",
+      "less": "less/!(variables).less",
+      "less/mixins": "less/mixins/*.less"
+    },
+    "font-awesome": {
+      "css": "css/font-awesome.min.css",
+      "fonts": "fonts/*.*"
+    }
+  },
+  "dependencies": {
+    "requirejs": "^2.3.2",
+    "metisMenu": "^2.5.2",
+    "font-awesome": "^4.6.3",
+    "bootstrap-table": "^1.11.0"
+  }
+}
