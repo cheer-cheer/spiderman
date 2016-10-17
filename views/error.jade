@@ -1,6 +1,6 @@
-extends layout
+extends basic-layout
 
-block content
-  h1= message
-  h2= error.status
+block body_content
+  h1 很抱歉，出错了
+  h2 #{error.status} (#{message})
   pre #{error.stack}
