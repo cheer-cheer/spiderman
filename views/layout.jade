@@ -2,10 +2,8 @@ extends basic-layout
 
 block html_head
   link(rel='stylesheet', href='/lib/metisMenu/metisMenu.css')
-  script.
-    require(['frame'],function(){})
-
-  block html_head
+  script require(['frame'],function(){})
+  block head
 
 block body_content
   // sidebar 侧边栏导航
@@ -14,15 +12,17 @@ block body_content
       aside.sidebar
         nav.sidebar-nav
           ul#ul-mnu.metismenu
+            li(title='回到控制台的首页。')
+              a(href='/?t-src=sidebar') &laquo; 控制台首页
             li.active
               a(href='#' aria-expanded='true') 爬虫管理
                 span.fa.arrow
               ul(aria-expanded='true')
                 li
-                  a(href='/my/spiders') 我的爬虫
+                  a(href='/config?spiderId=12') 设置
                 li
-                  a(href='#') Submenu 2
+                  a(href='/tasks?spiderId=12') 任务
             li
-              a(href='#') Menu 2
+              a(href='#') 日志管理
       .content
         block content

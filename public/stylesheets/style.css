@@ -2,7 +2,10 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
- 
+textarea {
+  resize: none;
+}
+
 a {
   color: #00B7FF;
 }
@@ -35,7 +38,7 @@ a {
   min-height: 500px;
   background: white;
   display: block;
-  overflow: hidden; 
+  overflow: hidden;
   width: auto;
   padding-left: 15px;
   padding-right: 15px;
