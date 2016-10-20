@@ -1,0 +1,64 @@
+extends layout
+block head
+  script require(['config'], function(app) { app.main() })
+block content
+  .page-header
+    h1 配置
+    p 在此页面上配置您的爬虫程序。
+  .row
+    .col-md-12
+      .panel.panel-default
+        .panel-heading
+          h2.panel-title 常规设置
+        .panel-body
+          p 对爬虫程序进行基本设置。
+          hr
+          form.row(role='form')
+            .col-md-12
+              .form-group
+                label(for='txt-name') 名称：
+                  b.text-warning(title='这个字段是必填的。') *
+                input#txt-name.form-control(type='text' readonly maxlength=64)
+                p.help-block 爬虫的显示名称。这是必填的。不超过 64 个字符。
+            .col-md-12
+              .form-group
+                label(for='txt-desc') 描述：
+                textarea#txt-desc.form-control(type='text' rows=5 readonly maxlength=250)
+                p.help-block 用一段简短的话描述爬虫的功能。不超过 250 个字符。
+            .col-md-12
+              button#btn-g-edit.btn.btn-default.btn-lg(type='button')
+                i.fa.fa-edit
+                | &nbsp; 修改
+              button#btn-g-save.btn.btn-primary.btn-lg.hidden(type='button')
+                i.fa.fa-save
+                | &nbsp;保存
+              button#btn-g-saving.btn.btn-primary.btn-lg.hidden(type='button' disabled)
+                i.fa.fa-spin.fa-circle-o-notch
+                | &nbsp;正在保存...
+              button#btn-g-cancel.btn.btn-warning.btn-lg.hidden(type='button')
+                i.fa.fa-times-circle
+                | &nbsp;取消
+    .col-md-12.panel-group
+      .panel.panel-default
+        .panel-heading
+          h2.panel-title 功能设置
+            a.pull-right(href='#w-panel-func' data-toggle='collapse' title='收起或展开该面板。')
+              i.fa.fa-angle-double-up
+        #w-panel-func.panel-collapse.in
+          .panel-body
+            p 对爬虫程序的功能进行调整。
+            hr
+            form.row(role='form')
+              .col-md-12
+                .form-group
+                  label(for='sel-auto-proxy') 代理自动切换：
+                  select#sel-auto-proxy.form-control
+                    option 不使用
+                    option 使用系统提供的代理
+                    option(disabled) 使用自定义的代理(暂未开放)
+                  p.help-block “代理自动切换”允许爬虫在检测到被屏蔽时，自动地切换到其他网络代理。
+                .form-group
+                  label(for='sel-') 定时运行：
+                  select#sel-schedule.form-control
+                    option(value='none') 关闭
+                    option(value='cron') 开启

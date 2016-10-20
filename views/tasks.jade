@@ -1,0 +1,69 @@
+extends layout
+
+block content
+  .page-header
+    h1 运行任务
+    p 在此页面上运行爬虫小程序定义的任务。
+  .row
+    .col-md-12(data-task-id='1')
+      .panel.panel-default
+        .panel-heading
+          h2.panel-title 淘宝商品详情页
+        .panel-body
+          p
+            | 复制淘宝宝贝详情页的网址到此处，爬虫程序会将页面上的数据抓取下来。
+          p
+            | 在此处放置任务的其他描述。
+          hr
+          form(role='form')
+            .form-group
+              label(for='txt-url_or_id') 淘宝宝贝详情页网址 / 商品 ID：
+                b.text-warning(title='这个字段是必填的。') *
+              input.form-control(type='text' id='txt-url_or_id' name='field_url_or_id' data-task-id='1')
+              span.help-block 示例：
+                span.label.label-info https://item.taobao.com/item.htm?spm=a230r.1.14.9.kSaRqN&id=15186689726&ns=1&abbucket=12#detail
+                | &nbsp;或&nbsp;
+                span.label.label-info item.taobao.com/item.html?id=15186689726
+                | &nbsp;或&nbsp;
+                span.label.label-info 15186689726
+                | 。
+            hr
+            button.btn.btn-primary(type='submit' title='运行该爬虫任务。')
+              i.fa.fa-play
+              | &nbsp; 运行
+            button.btn.btn-primary.hidden(disabled type='button')
+              i.fa.fa-spin.fa-spinner
+              | &nbsp;正在运行...
+            button.btn.btn-warning.hidden(type='button')
+              i.fa.fa-times-circle
+              | &nbsp;取消
+        .panel-footer
+          p 任务准备就绪。
+    .col-md-12(data-task-id='2')
+      .panel.panel-default
+        .panel-heading
+          h2.panel-title 淘宝搜索页
+        .panel-body
+          p
+            | 给定关键词，爬虫程序会在淘宝搜索该关键词，然后抓取搜索页中的全部商品信息。
+          p
+            | 在此处放置任务的其他描述。
+          hr
+          form(role='form')
+            .form-group    .col-md-12(data-task-id='1')
+
+              label(for='txt-keyword') 搜索关键词：
+                b.text-warning(title='这个字段是必填的。') *
+              input.form-control(type='text' id='txt-keyword' name='field_keyword' data-task-id='2')
+            hr
+            button.btn.btn-primary(type='submit' title='运行该爬虫任务。')
+              i.fa.fa-play
+              | &nbsp; 运行
+            button.btn.btn-primary.hidden(disabled type='button')
+              i.fa.fa-spin.fa-spinner
+              | &nbsp;正在运行...
+            button.btn.btn-warning.hidden(type='button')
+              i.fa.fa-times-circle
+              | &nbsp;取消
+        .panel-footer
+          p 任务准备就绪。
